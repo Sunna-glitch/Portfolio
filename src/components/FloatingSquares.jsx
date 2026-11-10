@@ -2,10 +2,10 @@ import { useMemo } from 'react'
 
 // Paleta de tonos naranja para los cuadritos
 const COLORS = [
-  'bg-orange-500',
-  'bg-orange-400',
-  'bg-orange-300',
-  'bg-amber-500',
+  'bg-orange-600 dark:bg-orange-500',
+  'bg-orange-500 dark:bg-orange-400',
+  'bg-orange-400 dark:bg-orange-300',
+  'bg-amber-600 dark:bg-amber-500',
 ]
 
 /**

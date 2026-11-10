@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { profile } from '../data'
-import {
-  MailIcon,
-  MapPinIcon,
-  socialIcons,
-} from './Icons'
+import { useI18n } from '../i18n'
+import { MailIcon, MapPinIcon, socialIcons } from './Icons'
 
 const inputClass =
-  'w-full rounded-lg border border-white/10 bg-zinc-900/50 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-orange-500/60 focus:ring-2 focus:ring-orange-500/20'
+  'w-full border border-line bg-card px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-subtle focus:border-accent-line focus:ring-2 focus:ring-orange-500/20'
 
 export default function Contact() {
+  const { t, lang } = useI18n()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
   const handleChange = (e) => {
@@ -19,9 +17,8 @@ export default function Contact() {
   // Abre el cliente de correo con el mensaje ya redactado
   const handleSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(
-      `Hola ${profile.name}, soy ${form.name || 'un visitante'} — mensaje desde tu portafolio`,
-    )
+    const sender = form.name || t.contact.visitor
+    const subject = encodeURIComponent(t.contact.mailSubject(profile.name, sender))
     const body = encodeURIComponent(
       `${form.message}\n\n— ${form.name} (${form.email})`,
     )
@@ -33,32 +30,29 @@ export default function Contact() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         {/* Información */}
         <div>
-          <p className="font-mono text-sm text-orange-500">02 · contacto</p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
-            ¿Tienes un proyecto en mente?
+          <p className="font-mono text-sm text-accent">{t.contact.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
+            {t.contact.title}
           </h2>
-          <p className="mt-4 max-w-md text-zinc-400">
-            Cuéntame sobre tu idea, estoy abierto a colaborar en proyectos
-            interesantes. Respondo normalmente en menos de 24 horas.
-          </p>
+          <p className="mt-4 max-w-md text-muted">{t.contact.desc}</p>
 
           <ul className="mt-8 space-y-4">
             <li>
               <a
                 href={`mailto:${profile.email}`}
-                className="group inline-flex items-center gap-3 text-zinc-300 transition-colors hover:text-orange-400"
+                className="group inline-flex items-center gap-3 text-muted transition-colors hover:text-accent"
               >
-                <span className="flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-colors group-hover:border-orange-500/40">
+                <span className="flex size-10 items-center justify-center border border-line bg-chip transition-colors group-hover:border-accent-line">
                   <MailIcon className="size-5" />
                 </span>
                 {profile.email}
               </a>
             </li>
-            <li className="inline-flex items-center gap-3 text-zinc-300">
-              <span className="flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+            <li className="inline-flex items-center gap-3 text-muted">
+              <span className="flex size-10 items-center justify-center border border-line bg-chip">
                 <MapPinIcon className="size-5" />
               </span>
-              {profile.location}
+              {profile.location[lang]}
             </li>
           </ul>
 
@@ -74,7 +68,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     aria-label={social.label}
                     title={social.label}
-                    className="flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-400 transition-all hover:-translate-y-0.5 hover:border-orange-500/40 hover:text-orange-400"
+                    className="flex size-10 items-center justify-center border border-line bg-chip text-muted transition-all hover:-translate-y-0.5 hover:border-accent-line hover:text-accent"
                   >
                     {Icon && <Icon className="size-5" />}
                   </a>
@@ -85,35 +79,32 @@ export default function Contact() {
         </div>
 
         {/* Formulario */}
-        <form
-          onSubmit={handleSubmit}
-          className=" border border-white/10 bg-zinc-900/40 p-6 backdrop-blur-sm md:p-8"
-        >
+        <form onSubmit={handleSubmit} className="border border-line bg-card p-6 md:p-8">
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="block sm:col-span-1">
-              <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                Nombre
+              <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+                {t.contact.name}
               </span>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Liino Lovelace"
+                placeholder="Ada Lovelace"
                 required
                 className={inputClass}
               />
             </label>
             <label className="block sm:col-span-1">
-              <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                Tu email
+              <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+                {t.contact.email}
               </span>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="liino@example.com"
+                placeholder="ada@example.com"
                 required
                 className={inputClass}
               />
@@ -121,14 +112,14 @@ export default function Contact() {
           </div>
 
           <label className="mt-5 block">
-            <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Mensaje
+            <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+              {t.contact.message}
             </span>
             <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Hola, me interesa trabajar contigo en..."
+              placeholder={t.contact.messagePlaceholder}
               rows={5}
               required
               className={`${inputClass} resize-none`}
@@ -139,11 +130,9 @@ export default function Contact() {
             type="submit"
             className="mt-6 w-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5 hover:bg-orange-400"
           >
-            Enviar mensaje
+            {t.contact.send}
           </button>
-          <p className="mt-3 text-center text-xs text-zinc-500">
-            Se abrirá tu cliente de correo con el mensaje listo para enviar.
-          </p>
+          <p className="mt-3 text-center text-xs text-subtle">{t.contact.mailNote}</p>
         </form>
       </div>
     </section>

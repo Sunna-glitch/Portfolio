@@ -24,6 +24,8 @@ Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación d
 ## 🚀 Características
 
 - 🟧 **Cuadritos flotantes animados** — aparecen desde abajo y suben hasta desaparecer, con tamaño, posición, giro y velocidad aleatorios
+- 🌓 **Modo claro / oscuro** — respeta la preferencia del sistema y recuerda tu elección
+- 🌐 **Bilingüe ES / EN** — detecta el idioma del navegador y cambia al instante
 - 📱 **Responsive** — se adapta a móvil, tablet y escritorio
 - 🍔 **Menú desplegable** — un solo botón en todas las resoluciones, se cierra con clic fuera o con `Escape`
 - 📝 **Lista de proyectos minimalista** — estilo editorial, sin ruido
@@ -78,15 +80,17 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 src/
 ├── components/
 │   ├── FloatingSquares.jsx   # 🟧 Cuadritos animados del fondo
-│   ├── Navbar.jsx            # Barra + menú desplegable
+│   ├── Navbar.jsx            # Barra + menú desplegable + botones de idioma y tema
 │   ├── Hero.jsx              # Sección de inicio
 │   ├── Projects.jsx          # Lista de proyectos
 │   ├── Contact.jsx           # Formulario e info de contacto
 │   ├── Footer.jsx            # Pie de página
 │   └── Icons.jsx             # Iconos SVG en línea
+├── i18n.jsx                  # 🌐 Provider de idioma (ES/EN)
+├── theme.jsx                 # 🌓 Provider de tema (claro/oscuro)
 ├── data.js                   # ✏️ Tu info: nombre, bio, proyectos, redes
 ├── App.jsx
-├── index.css                 # Tailwind + keyframes de la animación
+├── index.css                 # Tailwind + temas + keyframes de la animación
 └── main.jsx
 ```
 
@@ -96,9 +100,13 @@ Todo el contenido vive en **`src/data.js`**:
 
 - `profile` → tu nombre, rol, bio, email, ubicación, habilidades y redes sociales
 - `projects` → tus proyectos (título, descripción, tecnologías y enlaces)
+- `ui` → textos de la interfaz por idioma
+
+Los textos traducibles van como `{ es: '...', en: '...' }`.
 
 La animación de los cuadritos se ajusta en `src/components/FloatingSquares.jsx`
-(cantidad, tamaños, colores) y sus keyframes en `src/index.css`.
+(cantidad, tamaños, colores) y sus keyframes en `src/index.css`. Los colores de
+ambos temas (claro/oscuro) también se definen como tokens en `src/index.css`.
 
 =======
 >>>>>>> 92ee3abbc689a723e3eee1f271bf34a72c9f8fd3

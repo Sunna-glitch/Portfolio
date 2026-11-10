@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portafolio personal — proyectos y contacto." />
     <title>Adrian · Portafolio</title>
+    <script>
+      // Aplica el tema guardado ANTES de que cargue React,
+      // para que no haya un destello de tema incorrecto al abrir
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('theme')
+          var dark = saved
+            ? saved === 'dark'
+            : !window.matchMedia('(prefers-color-scheme: light)').matches
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
