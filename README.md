@@ -19,8 +19,6 @@
 
 Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación de cuadritos que suben desde abajo y desaparecen (con tamaños, velocidad y opacidad aleatorios). Sin librerías de UI, sin animaciones importadas — solo React, Tailwind y un poco de CSS.
 
-![preview](docs/preview.png)
-
 ## 🚀 Características
 
 - 🟧 **Cuadritos flotantes animados** — aparecen desde abajo y suben hasta desaparecer, con tamaño, posición, giro y velocidad aleatorios
