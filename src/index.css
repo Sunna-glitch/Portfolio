@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * Cuadritos flotantes: aparecen desde abajo de la pantalla,
+   * suben hasta arriba y desaparecen. La velocidad, el tamaño y
+   * la opacidad se definen por cuadrito desde React.
+   */
+  --animate-float-up: float-up 12s linear infinite;
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    /* Aparece (fade in) mientras entra en pantalla */
+    10% {
+      opacity: var(--sq-opacity, 0.3);
+    }
+    85% {
+      opacity: var(--sq-opacity, 0.3);
+    }
+    /* Sube hasta salir por arriba y desaparece (fade out) */
+    100% {
+      transform: translateY(calc(-100vh - 100%)) rotate(var(--sq-rotate, 60deg));
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-950 font-sans text-zinc-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-orange-500 text-black;
+  }
+}
