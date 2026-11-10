@@ -15,10 +15,6 @@ export default function Footer() {
             <span className="text-orange-500">.</span>
           </span>
         </p>
-        <p className="text-sm text-subtle">
-          {t.footer.madeWith} <span className="text-accent">React</span> +{' '}
-          <span className="text-accent">Tailwind CSS</span>
-        </p>
         <a
           href="#inicio"
           aria-label={t.footer.backToTop}
