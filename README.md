@@ -40,14 +40,6 @@ Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación d
 | [Tailwind CSS v4](https://tailwindcss.com) | Estilos y animaciones |
 | [Space Grotesk](https://fonts.google.com/species/Space+Grotesk) + [Inter](https://fonts.google.com/species/Inter) | Tipografías |
 
-### Comandos disponibles
-
-| Comando | Descripción |
-| --- | --- |
-| `npm run dev` | Servidor de desarrollo con hot-reload |
-| `npm run build` | Build de producción en `/dist` |
-| `npm run preview` | Previsualiza el build de producción |
-
 ## 📄 Licencia
 
 Distribuido bajo la licencia MIT. Consulta [`LICENSE`](LICENSE) para más información.
