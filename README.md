@@ -71,34 +71,6 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 | `npm run build` | Build de producción en `/dist` |
 | `npm run preview` | Previsualiza el build de producción |
 
-## 🗂️ Estructura
-
-```
-src/
-├── components/
-│   ├── FloatingSquares.jsx   # 🟧 Cuadritos animados del fondo
-│   ├── Navbar.jsx            # Barra + menú desplegable
-│   ├── Hero.jsx              # Sección de inicio
-│   ├── Projects.jsx          # Lista de proyectos
-│   ├── Contact.jsx           # Formulario e info de contacto
-│   ├── Footer.jsx            # Pie de página
-│   └── Icons.jsx             # Iconos SVG en línea
-├── data.js                   # ✏️ Tu info: nombre, bio, proyectos, redes
-├── App.jsx
-├── index.css                 # Tailwind + keyframes de la animación
-└── main.jsx
-```
-
-## ✏️ Personalización
-
-Todo el contenido vive en **`src/data.js`**:
-
-- `profile` → tu nombre, rol, bio, email, ubicación, habilidades y redes sociales
-- `projects` → tus proyectos (título, descripción, tecnologías y enlaces)
-
-La animación de los cuadritos se ajusta en `src/components/FloatingSquares.jsx`
-(cantidad, tamaños, colores) y sus keyframes en `src/index.css`.
-
 ## 📄 Licencia
 
 Distribuido bajo la licencia MIT. Consulta [`LICENSE`](LICENSE) para más información.
