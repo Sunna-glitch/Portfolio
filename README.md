@@ -40,6 +40,7 @@ Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación d
 | [Tailwind CSS v4](https://tailwindcss.com) | Estilos y animaciones |
 | [Space Grotesk](https://fonts.google.com/species/Space+Grotesk) + [Inter](https://fonts.google.com/species/Inter) | Tipografías |
 
+<<<<<<< HEAD
 ## 📦 Instalación
 
 1. Clona el repositorio:
@@ -99,6 +100,8 @@ Todo el contenido vive en **`src/data.js`**:
 La animación de los cuadritos se ajusta en `src/components/FloatingSquares.jsx`
 (cantidad, tamaños, colores) y sus keyframes en `src/index.css`.
 
+=======
+>>>>>>> 92ee3abbc689a723e3eee1f271bf34a72c9f8fd3
 ## 📄 Licencia
 
 Distribuido bajo la licencia MIT. Consulta [`LICENSE`](LICENSE) para más información.
@@ -107,12 +110,15 @@ Distribuido bajo la licencia MIT. Consulta [`LICENSE`](LICENSE) para más inform
 
 <div align="center">
 
+<<<<<<< HEAD
 ### 📬 ¿Hablamos?
 
 [![GitHub](https://img.shields.io/badge/GitHub-tuusuario-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/tuusuario)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-tuusuario-0A66C2?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/tuusuario)
 [![Email](https://img.shields.io/badge/Email-hola@tucorreo.com-EA4335?logo=gmail&logoColor=white&style=flat-square)](mailto:hola@tucorreo.com)
 
+=======
+>>>>>>> 92ee3abbc689a723e3eee1f271bf34a72c9f8fd3
 **⬆ Volver arriba**
 
 </div>
