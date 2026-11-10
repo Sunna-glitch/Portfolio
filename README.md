@@ -40,29 +40,6 @@ Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación d
 | [Tailwind CSS v4](https://tailwindcss.com) | Estilos y animaciones |
 | [Space Grotesk](https://fonts.google.com/species/Space+Grotesk) + [Inter](https://fonts.google.com/species/Inter) | Tipografías |
 
-## 📦 Instalación
-
-1. Clona el repositorio:
-
-```bash
-git clone https://github.com/tuusuario/portfolio.git
-cd portfolio
-```
-
-2. Instala las dependencias:
-
-```bash
-npm install
-```
-
-3. Levanta el servidor de desarrollo:
-
-```bash
-npm run dev
-```
-
-Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
-
 ### Comandos disponibles
 
 | Comando | Descripción |
