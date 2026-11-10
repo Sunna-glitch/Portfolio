@@ -114,19 +114,12 @@ ambos temas (claro/oscuro) también se definen como tokens en `src/index.css`.
 
 Distribuido bajo la licencia MIT. Consulta [`LICENSE`](LICENSE) para más información.
 
----
-
 <div align="center">
-
-<<<<<<< HEAD
+  
 ### 📬 ¿Hablamos?
 
 [![GitHub](https://img.shields.io/badge/GitHub-tuusuario-181717?logo=github&logoColor=white&style=flat-square)](https://github.com/tuusuario)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-tuusuario-0A66C2?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/tuusuario)
 [![Email](https://img.shields.io/badge/Email-hola@tucorreo.com-EA4335?logo=gmail&logoColor=white&style=flat-square)](mailto:hola@tucorreo.com)
-
-=======
->>>>>>> 92ee3abbc689a723e3eee1f271bf34a72c9f8fd3
-**⬆ Volver arriba**
 
 </div>
