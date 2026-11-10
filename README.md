@@ -40,7 +40,7 @@ Un portafolio simple y directo: fondo oscuro, acentos naranja y una animación d
 | [Tailwind CSS v4](https://tailwindcss.com) | Estilos y animaciones |
 | [Space Grotesk](https://fonts.google.com/species/Space+Grotesk) + [Inter](https://fonts.google.com/species/Inter) | Tipografías |
 
-<<<<<<< HEAD
+
 ## 📦 Instalación
 
 1. Clona el repositorio:
